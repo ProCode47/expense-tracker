@@ -1,0 +1,64 @@
+$blue: rgb(79, 151, 218);
+$pink: rgb(238, 49, 206);
+
+.overlay-sm {
+    position: absolute;
+    width: 99%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    z-index: 1;
+  
+    .main-sm {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding: 23px;
+      height: fit-content;
+      background-color: #2d2e32;
+      color: white;
+      width: 30%;
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      border-radius: 0.25rem;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      position: relative;
+      .fa-times {
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        color: white;
+        cursor: pointer;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 1.2rem;
+      }
+      span{
+          display: flex;
+          justify-content: space-between;
+
+          button{
+              width: 40%;
+              height: fit-content;
+              color: white;
+              border: none;
+              outline: none;
+              border-radius: 5px;
+              cursor: pointer;
+              padding: 10px;
+              height: 60px;
+              font-size: 1.2rem;
+              background-color: $pink;
+
+              &:last-child{
+                background-color: $blue;
+              }
+          }
+      }
+    }
+}

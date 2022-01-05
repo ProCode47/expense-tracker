@@ -1,0 +1,388 @@
+$blue: rgb(79, 151, 218);
+$pink: rgb(238, 49, 206);
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+body {
+  background-color: white;
+  font-family: "Montserrat", sans-serif;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  height: fit-content;
+
+  p{
+    width: 50%;
+    min-width: 50%;
+    margin: 0px;
+  }
+
+  .snack-bar{
+    display:none;
+    width: 45%;
+    max-width: 45%;
+    justify-content: flex-end;
+
+    span{
+      padding: 10px;
+      width: fit-content;
+      height: fit-content;
+      border-radius: 5px;
+      background-color: rgba(128, 128, 128, 0.74);
+      
+
+    }
+
+    .fa-plus{
+      padding: 10px;
+      display: none;
+      cursor: pointer;
+      width: fit-content;
+      height: fit-content;
+      background-color: $blue;
+      color: white;
+      border-radius: 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 9%;
+      right: 5%;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+.container {
+  display: flex;
+  height: 90vh;
+  max-height: 90vh;
+  
+  width: 100%;
+  justify-content: space-between;
+
+  .transactions {
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+
+    h1 {
+      height: fit-content;
+      padding: 10px;
+      margin-bottom: 0.5rem;
+      margin-top: 2rem;
+      font-size: 1.5rem;
+    }
+
+    .finance {
+      display: flex;
+      width: 100%;
+      height: 120px;
+      justify-content: space-evenly;
+      color: white;
+      .income {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 10px;
+        align-items: center;
+        height: 100%;
+        background-color: $blue;
+        border-radius: 5px;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+        h2 {
+          font-weight: lighter;
+        }
+
+        h3 {
+          font-size: 1.8rem;
+        }
+      }
+      .expenses {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 40%;
+        padding: 10px;
+        height: 100%;
+        background-color: $pink;
+        border-radius: 5px;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        h2 {
+          font-weight: lighter;
+        }
+
+        h3 {
+          font-size: 1.8rem;
+        }
+      }
+    }
+    .transaction-history {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      .transaction-item {
+        padding: 15px;
+        display: flex;
+        position: relative;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        border-radius: 0.25rem;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        margin-bottom: 10px;
+        .content {
+          display: flex;
+        }
+
+        .transaction-amount {
+          margin-right: 25px;
+        }
+
+        .desc {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          margin-right: 20px;
+
+          .desc-wrapper{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: fit-content;
+
+          p {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin: 0px;
+            margin-right: auto;
+            &:last-child{
+              font-weight: lighter;
+              margin: 0px;
+              margin-top: 10px;
+              margin-right: auto;
+
+            }
+          }
+          }
+          
+
+          .fas {
+            color: rgba(255, 255, 255, 0.815);
+          }
+          i {
+            margin-right: 20px;
+            height: fit-content;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+          }
+          .in {
+            background-color: $blue;
+          }
+          .out {
+            background-color: $pink;
+          }
+          
+        }
+        p {
+          font-size: 1.1rem;
+          font-weight: bold;
+        }
+        .wrapper {
+          display: flex;
+          width: 180px;
+          flex-direction: column;
+          margin-left: auto;
+          padding-right: 10px;
+          .collapse {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            i {
+              margin-left: 0px;
+              cursor: pointer;
+              transition-duration: 0.5s;
+            }
+          }
+          .content {
+            display: none;
+            transition-duration: 1s;
+            justify-content: space-between;
+
+            span {
+              width: fit-content;
+              cursor: pointer;
+              
+              .fa-pencil-alt{
+                color: $blue;
+              }
+              .fa-trash-alt{
+                color: $pink;
+              }
+            }
+          }
+          .show {
+            display: flex;
+          }
+          .rotate {
+            transform: rotateX(180deg);
+          }
+        }
+      }
+      .income {
+        border-left: solid 5px $blue;
+      }
+      .expense {
+        border-left: solid 5px $pink;
+      }
+    }
+  }
+  .profile-stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24%;
+
+    .profile {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      height: 10%;
+      margin-bottom: 1rem;
+      margin-top: -1rem;
+      .wrapper {
+        display: flex;
+        flex-direction: column;   
+        width: 70%;
+        align-items: center;
+        justify-content: center;
+
+        .wallet{
+          display: flex;
+          flex-direction: column;
+          .fas {
+            color: #2E5871;
+          }
+          span{
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            
+            p {
+            margin: 0px;
+            margin-left: 10px;
+            font-weight: bold;
+          }
+          }
+  
+         
+        }
+        
+      }
+
+      img {
+        width: 20%;
+        height: auto;
+      }
+
+      h1 {
+        font-size: 1rem;
+        // font-weight: lighter;
+      }
+    }
+    .stat {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: fit-content;
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      border-radius: 0.25rem;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      padding: 5px;
+      margin-bottom: 1rem;
+
+      .stat-info {
+        height: 30%;
+        padding: 5px;
+        margin-bottom: .4rem;
+        padding-left: 10px;
+
+
+        span {
+          margin-right: auto;
+          width: fit-content;
+          height: fit-content;
+          h2 {
+            font-size: 1.1rem;
+            margin: 0px;
+            margin-top: 5px;
+          }
+          p {
+            font-size: 1rem;
+            margin: 0px;
+            margin-top: 5px;
+
+          }
+        }
+      }
+      .graph {
+        height: 70%;
+      }
+    }
+    button {
+      border: none;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      appearance: none;
+      color: white;
+      outline: none;
+      width: 100%;
+      height: 10%;
+      margin-bottom: 1rem;
+      background-color: $blue;
+      font-size: 1rem;
+      font-weight: lighter;
+      border-radius: 5px;
+      cursor: pointer;
+
+      i {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 992px) {
+  .show-sm{
+    display:flex ;
+  }
+  .hide-sm{
+    display: none !important;
+  }
+  .extend-sm{
+    width: 100% !important;
+  }
+  .text-sm{
+    font-size: 1rem;
+  }
+  .col-sm{
+    flex-direction: column !important;
+  }
+  .col-item{
+    width: 99% !important;
+    margin:0px;
+  }
+  .main-sm{
+    height: fit-content !important;
+    width: 75% !important;
+  }
+  .text-xs{
+    font-size: 1rem !important;
+  }
+}
