@@ -95,8 +95,6 @@ const Tracker = () => {
       const parse = [longDate(item.value), parseInt(item.amount)]
       expenseData.push(parse)
     })
-    console.log(incomeData)
-    console.log(expenseData)
     setIncomeData(incomeData)
     setExpenseData(expenseData)
     

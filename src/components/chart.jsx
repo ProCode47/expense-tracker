@@ -29,4 +29,3 @@ const BarChart = ({ chartData, color }) => {
 };
 
 export default BarChart;
-
