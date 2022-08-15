@@ -2,7 +2,7 @@ import TextField from "@mui/material/TextField";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import DatePicker from "@mui/lab/DatePicker";
-import { useState, useEffect } from "react/cjs/react.development";
+import { useState, useEffect } from "react";
 import crypto from "crypto";
 import "../styles/modal.scss";
 

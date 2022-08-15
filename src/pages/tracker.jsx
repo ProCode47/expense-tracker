@@ -2,7 +2,7 @@ import "../styles/tracker.scss";
 import avatar from "../assets/avatar.png";
 import BarChart from "../components/chart";
 import Modal from "../components/modal";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 import HistoryItem from "../components/historyItem";
 import { useEffect } from "react";
 import ConfirmModal from "../components/confirmModal";
